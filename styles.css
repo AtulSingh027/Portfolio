@@ -21,23 +21,44 @@ body
 
 }
 
-nav{
-    height: 15vh;
+nav {
+    height: 10vh;
     width: 100%;
+    min-width:400px;
     margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    top:-25px;
+    top: -1px;
     background: var(--bg);
-    backdrop-filter:blur(10px) ;
+    backdrop-filter: blur(10px);
     z-index: 10;
-    
-    
+    padding: 0 30px;
 }
 
+nav ul {
+    display: flex;
+    gap: 5rem;
+    list-style: none;
+    margin-right: 30px;
+    transition: all 0.3s ease;
+}
+
+#btn {
+    all: unset;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+    display: none;
+    font-size: 24px;
+    z-index: 20;
+}
+
+#btn:hover
+{
+    transform: rotate(180deg);
+    color: var(--blue);
+}
 nav h1{
     font-size: 45px;
     color: var(--blue);
@@ -47,13 +68,7 @@ nav h1{
     margin-left: 40px;
 }
 
-nav ul{
-    display: flex;
-    gap: 5rem;
-    list-style: none;
-    margin-right: 30px;
-    
-}
+
 
 nav a
 {
@@ -98,20 +113,7 @@ nav a:hover
     color: black;
 }
 
-#btn
-{
-    all: unset;
-    cursor: pointer;
-    transition: .5s ease-out;
 
-    display: none;
-}
-
-#btn:hover
-{
-    transform: rotate(180deg);
-    color: var(--blue);
-}
 
 .s-container
 {
@@ -279,6 +281,7 @@ h3
 {
     height: 400px;
     width:400px;
+    min-width: 340px;
     /* background-color: #444a54; */
     background-color: #2A2D34;
 
@@ -287,6 +290,7 @@ h3
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease-in-out;   
+    flex-wrap: wrap;
 }
 
 #Skills .card:hover 
@@ -323,7 +327,7 @@ h3
 {
     height: 220px;
     width: 380px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 #Skills .card .img img
@@ -406,6 +410,8 @@ footer h3
 
 /* Responsivness  */
 
+
+
 @media only screen and (max-width: 850px)
 {
     #btn{
@@ -466,7 +472,11 @@ footer h3
 @media only screen and (max-width: 1100px) 
 {
     #Skills {
-        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
+        grid-template-columns: repeat(2, 1fr); 
+
+    }
+    nav h1{
+        font-size: 30px;
     }
 }
 
@@ -476,3 +486,4 @@ footer h3
         grid-template-columns: repeat(1, 1fr); /* Stack cards vertically on very small screens */
     }
 }
+
